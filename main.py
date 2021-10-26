@@ -108,7 +108,7 @@ def main():
     snake = Snake()
     food = Food()
 
-    myfont = pygame.font.SysFont("monospace",16)
+    myfont = pygame.font.SysFont("monospace", 30)
 
     while (True):
         clock.tick(10)
