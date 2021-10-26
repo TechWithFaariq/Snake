@@ -8,8 +8,6 @@ class Snake():
         self.positions = [((screen_width/2), (screen_height/2))]
         self.direction = random.choice([up, down, left, right])
         self.color = (17, 24, 47)
-        # Special thanks to YouTubers Mini - Cafetos and Knivens Beast for raising this issue!
-        # Code adjustment courtesy of YouTuber Elija de Hoog
         self.score = 0
 
     def get_head_position(self):
@@ -59,6 +57,7 @@ class Snake():
                 elif event.key == pygame.K_RIGHT:
                     self.turn(right)
 
+
 class Food():
     def __init__(self):
         self.position = (0,0)
@@ -96,6 +95,7 @@ left = (-1,0)
 right = (1,0)
 
 def main():
+    run = True
     pygame.init()
 
     clock = pygame.time.Clock()
@@ -110,7 +110,7 @@ def main():
 
     myfont = pygame.font.SysFont("monospace", 30)
 
-    while (True):
+    while (run):
         clock.tick(10)
         snake.handle_keys()
         drawGrid(surface)
